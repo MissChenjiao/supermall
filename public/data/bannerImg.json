@@ -1,0 +1,17 @@
+{
+  "banners":[
+    {
+      "id":1,
+      "src":"./data/banners/1.jpg",
+      "link":"jakksk"
+
+    },
+    {
+      "id":2,
+      "src":"./data/banners/2.jpg",
+      "link":"dsadsadsas"
+
+    }
+
+  ]
+}
