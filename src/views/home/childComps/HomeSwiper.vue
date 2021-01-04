@@ -1,3 +1,12 @@
+<!--
+ * @Author: chenjiao
+ * @Date: 2020-12-22 17:18:38
+ * @LastEditTime: 2020-12-31 15:01:10
+ * @LastEditors: Please set LastEditors
+ * @Description: 首页轮播图
+ * @FilePath: \supermall\src\views\home\childComps\HomeSwiper.vue
+-->
+
 <template>
   <div class="HomeSwiper">
      <van-swipe  :autoplay="3000">
@@ -11,6 +20,7 @@
             height="200px"
             fit="cover"
             :src="item.image"
+            @load="imageLoad"
            />
         </a>
       </van-swipe-item>
@@ -28,6 +38,22 @@
         default(){
           return []
         }
+      }
+    },
+    data(){
+      return {
+        isLoad:false
+      }
+    },
+    methods:{
+      // 1.监听轮播图加载完成
+      imageLoad(){
+        // console.log("----")
+        if(!this.isLoad){
+          this.$emit("swiper-image-load")
+          this.isLoad = true
+        }
+        
       }
     }
   }

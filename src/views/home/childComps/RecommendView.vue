@@ -37,6 +37,7 @@
 }
 .recommend-item{
   flex: 1;
+
 }
 .recommend-item img{
   height: 80px;

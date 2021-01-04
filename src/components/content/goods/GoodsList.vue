@@ -1,6 +1,6 @@
 <template>
   <div class="goods-list">
-    <goods-list-item   v-for="item in goods" :goodsItem="item"  :key="item.id"/>{{goods}}
+    <goods-list-item   v-for="item in goods" :goodsItem="item"  :key="item.id"/>
   </div>
 </template>
 
@@ -24,5 +24,11 @@ import GoodsListItem from './GoodsListItem.vue'
 </script>
 
 <style lang="scss" scoped>
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2px;
 
+}
 </style>

@@ -9,5 +9,9 @@ module.exports = {
         "views":"@/views"
       }
     }
-  }
+  },
+  
+}
+module.exports = {
+  lintOnSave: false
 }

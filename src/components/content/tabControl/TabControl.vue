@@ -1,3 +1,12 @@
+<!--
+ * @Author: chenjiao
+ * @Date: 2020-12-23 15:12:08
+ * @LastEditTime: 2020-12-30 16:14:16
+ * @LastEditors: Please set LastEditors
+ * @Description: 首页的商品类型按钮
+ * @FilePath: \supermall\src\components\content\tabControl\TabControl.vue
+-->
+
 <template>
   <div class="tab-contorl">
     <div  class="tab-contorl-item"
@@ -31,6 +40,8 @@
     methods:{
       btnClick(index){
         this.currmentIndex = index;
+        //监听点击事件将index传到home组件
+        this.$emit("tabClick",index)
       }
     }
   }
@@ -43,6 +54,7 @@
   font-size: 15px;
   height:44px;
   line-height:44px;
+  
 }
 .tab-contorl-item{
   flex: 1;
