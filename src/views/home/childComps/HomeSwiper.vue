@@ -1,7 +1,7 @@
 <!--
  * @Author: chenjiao
  * @Date: 2020-12-22 17:18:38
- * @LastEditTime: 2020-12-31 15:01:10
+ * @LastEditTime: 2021-01-06 12:00:31
  * @LastEditors: Please set LastEditors
  * @Description: 首页轮播图
  * @FilePath: \supermall\src\views\home\childComps\HomeSwiper.vue

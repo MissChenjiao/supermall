@@ -1,7 +1,16 @@
+<!--
+ * @Author: chenjiao
+ * @Date: 2020-12-18 10:47:16
+ * @LastEditTime: 2021-01-05 20:51:41
+ * @LastEditors: Please set LastEditors
+ * @Description: 入口界面
+ * @FilePath: \supermall\src\App.vue
+-->
 <template>
   <div id="app">
-    <router-view></router-view>
-    <!-- <home/> -->
+    <keep-alive exclude="Detail">
+       <router-view></router-view>
+    </keep-alive>
     <main-tab-bar/>
   </div>
 </template>

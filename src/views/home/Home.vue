@@ -74,7 +74,8 @@ export default {
       },
       currentType:"pop",
       taboffsetTop:0,
-      isfixed:false
+      isfixed:false,
+      saveY:0
       
     }
   },
@@ -183,7 +184,16 @@ export default {
       })
     }
   },
-   
+  destroyed () {
+    console.log('-----');
+  },
+  activated(){
+    this.$refs.scroll.scrollTo(0,this.saveY,0)
+    this.$refs.scroll.refresh()
+  },
+  deactivated(){
+    this.saveY = this.$refs.scroll.getScrolly();
+  }
 }
 </script>
 

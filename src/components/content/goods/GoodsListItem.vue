@@ -1,15 +1,16 @@
 <!--
  * @Author: chenjiao
  * @Date: 2020-12-23 17:30:59
- * @LastEditTime: 2020-12-30 16:14:55
+ * @LastEditTime: 2021-01-11 15:32:25
  * @LastEditors: Please set LastEditors
  * @Description: goods
  * @FilePath: \supermall\src\components\content\goods\GoodsListItem.vue
 -->
 
 <template>
-  <div class="goods-list-item">
-    <a :href="goodsItem.link"><img :src="goodsItem.show.img" @load="imageLoad"></a>
+  <div class="goods-list-item" @click="itemClick">
+    <!-- <a :href="goodsItem.link"><img :src="goodsItem.show.img" @load="imageLoad"></a> -->
+    <img :src="goodsItem.show.img" @load="imageLoad">
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
@@ -34,6 +35,10 @@
       imageLoad(){
         // console.log("图片加载完成")
         this.$bus.$emit("itemImageLoad")
+      },
+      //2.点击跳转详情页
+      itemClick(){
+        this.$router.push("/detail/"+this.goodsItem.iid)
       }
     }
   }

@@ -70,7 +70,11 @@ import Bscroll from "better-scroll"
     //4.封装refresh
     refresh(){
       this.scroll && this.scroll.refresh()
-    }   
+    } ,
+    // 5.封装滑动的Y值
+    getScrolly(){
+      return this.scroll ? this.scroll.y : 0
+    }  
   }
 
   }
