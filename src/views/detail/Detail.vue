@@ -1,18 +1,21 @@
 <!--
  * @Author: chenjiao
  * @Date: 2021-01-05 15:58:23
- * @LastEditTime: 2021-01-11 17:47:13
+ * @LastEditTime: 2021-01-14 15:44:54
  * @LastEditors: Please set LastEditors
  * @Description: 商品详情页
  * @FilePath: \supermall\src\views\detail\Detail.vue
 -->
 <template>
   <div class="detail">
-    <detail-nav-bar/>
+    <van-sticky>
+        <detail-nav-bar/>
+    </van-sticky>
     <detail-swper :top-images="topImages"/>
     <detail-goods-info :goods="goods"/>
     <detail-shop-info :shop="shop"/>
-    <detail-goods-pics :detail-info="imgList"/>
+    <detail-goods-pics :img-list="imgList"/>
+    <detail-goods-params :item-par-info="itemParInfo" :rules="rules"/>
   </div>
 </template>
 
@@ -24,9 +27,8 @@ import DetailShopInfo from './childComps/DetailShopInfo.vue'
 import DetailGoodsPics from './childComps/DetailGoodsPics.vue'
 
 import { getDetail , goods , Shop } from '../../network/detail'
-
-
-
+import { Sticky } from 'vant';
+import DetailGoodsParams from './childComps/DetailGoodsParams.vue'
 
   export default {
     name:"Detail",
@@ -35,7 +37,8 @@ import { getDetail , goods , Shop } from '../../network/detail'
         DetailSwper,
         DetailGoodsInfo,
         DetailShopInfo,
-        DetailGoodsPics
+        DetailGoodsPics,
+        DetailGoodsParams
     },
     data(){
       return {
@@ -43,7 +46,9 @@ import { getDetail , goods , Shop } from '../../network/detail'
         topImages:[],
         goods:{},
         shop:{},
-        imgList: []
+        imgList: [],
+        itemParInfo:{},
+        rules:{}
       }
     },
     created(){
@@ -60,8 +65,12 @@ import { getDetail , goods , Shop } from '../../network/detail'
         // 获取店铺信息
         this.shop = new Shop(data.shopInfo)
         //获得商品详情图片列表
-        this.detailInfo = data.detailInfo
         this.imgList = data.detailInfo.detailImage
+        //获得商品详情参数信息
+        this.itemParInfo = data.itemParams.info
+        this.rules = data.itemParams.rule
+
+
       })
       
     }

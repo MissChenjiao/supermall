@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-18 16:56:04
+ * @LastEditTime: 2021-01-14 15:00:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \supermall\src\components\common\tabbar\NavBar.vue
+-->
 <template>
   <div class="nav-bar">
     <div class="left"><slot name="left"></slot></div>

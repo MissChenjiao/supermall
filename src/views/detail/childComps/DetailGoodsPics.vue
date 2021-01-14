@@ -1,7 +1,7 @@
 <!--
  * @Author: chenjiao
  * @Date: 2021-01-11 14:51:22
- * @LastEditTime: 2021-01-11 17:49:33
+ * @LastEditTime: 2021-01-14 14:27:46
  * @LastEditors: Please set LastEditors
  * @Description: 商品详情图片展示
  * @FilePath: \supermall\src\views\detail\childComps\DetailGoodsPics.vue
